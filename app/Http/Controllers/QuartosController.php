@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Request;
 use App\Quarto;
+use App\imagem_quarto;
 use App\Http\Requests\UploadRequest;
 
 class QuartosController extends Controller
@@ -21,10 +22,13 @@ class QuartosController extends Controller
     }
 
     public function salvar(UploadRequest $request) {
-        dd("Chamou aqui");
         $quarto = Quarto::create($request->all());
-        foreach ($request->fotos as $foto) {
+        foreach ($request->photos as $foto) {
             $filename = $foto->store('photos');
+            imagem_quarto::create([
+                'quarto_id' => $quarto->id,
+                'imagem' => $filename
+            ]);
         }
         return 'Upload successful!';
     }

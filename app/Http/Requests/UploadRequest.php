@@ -24,10 +24,12 @@ class UploadRequest extends FormRequest
     public function rules()
     {
        $rules = [
-            'nome' => 'required'
+            'nome' => 'required',
+            'descricao_simples' => 'required',
+            'descricao_completa' => 'required',
+            'valor' => 'required'
         ];
-        $photos = count($this->input('photos'));
-        dd($this->input('photos[]'));
+        $photos = count($this->file('photos'));
         foreach(range(0, $photos) as $index) {
             $rules['photos.' . $index] = 'image|mimes:jpeg,bmp,png|max:2000';
         }

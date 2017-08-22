@@ -20,7 +20,7 @@ class CreateImagemQuartosTable extends Migration
                 ->references('id')
                 ->on('quartos')
                 ->onDelete('cascade');
-            $table->binary('imagem');    
+            $table->string('imagem',1000);    
             $table->timestamps();
         });
     }
