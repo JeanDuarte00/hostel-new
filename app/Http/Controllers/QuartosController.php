@@ -30,6 +30,7 @@ class QuartosController extends Controller
                 'imagem' => $filename
             ]);
         }
-        return 'Upload successful!';
+        
+        return redirect('/home');	
     }
 }

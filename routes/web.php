@@ -36,3 +36,8 @@ Route::group(['middleware' => 'auth','prefix'=> '/quartos'], function() {
 	Route::post('update', 'QuartosController@update');
 
 });
+
+Route::group(['middleware' => 'auth', 'prefix'=>'/disponibilidade'], function(){
+	Route::get('/', 'DisponibilidadeController@index');
+	Route::get('/add/{id}', 'DisponibilidadeController@criar');
+});
