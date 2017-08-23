@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Quarto;
 use App\Disponibilidade;
+use App\Http\Requests\DisponibilidadeRequest;
+use Illuminate\Support\Facades\DB;
+
 class DisponibilidadeController extends Controller
 {
     /**
@@ -38,9 +41,11 @@ class DisponibilidadeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function salvar(DisponibilidadeRequest $request)
     {
-        //
+        $disp = Disponibilidade::create($request->all());
+
+        return $this->index();
     }
 
     /**
@@ -54,15 +59,24 @@ class DisponibilidadeController extends Controller
         //
     }
 
+    public function iniciarEditar($idQuarto, $idDisponibilidade) {
+       $quarto = quarto::where('id',$idQuarto)->firstOrFail();
+       $disp = disponibilidade::where('id',$idDisponibilidade)->firstOrFail();
+
+       return view('disponibilidade.editar', compact('quarto', 'disp'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editar(DisponibilidadeRequest $request)
     {
-        //
+        $disp = new Disponibilidade($request->all());
+        $result = DB::update('update disponibilidades set valor = ?, data_inicio = ?, data_fim = ? where id = ?',[$disp->valor, $disp->data_inicio, $disp->data_fim, $disp->id]);
+        return $this->criar($disp->quarto_id);
     }
 
     /**
@@ -72,19 +86,15 @@ class DisponibilidadeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function deletar($id)
     {
-        //
+        Disponibilidade::destroy($id);   
+
+        return $this->index();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    private function convertToDate($date) {
+        
+        return date($date);
     }
 }

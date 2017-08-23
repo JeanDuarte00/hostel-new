@@ -14,6 +14,7 @@
 
     <form action="/disponibilidade/salvar" method="post">
         {{ csrf_field() }}
+        <input type="hidden" value="{{$quarto['id']}}" name="quarto_id"/>
         <div class="form-group">
             <label for="data_inicio">Data Inicio</label>
             <input type="date" name="data_inicio" class="form-control" id="data_inicio">
@@ -25,21 +26,12 @@
         </div>
 
         <div class="form-group">
-            <label for="valor">Valor</label>
-            <input type="number" name="valor" class="form-control" id="valor">
-        </div>
-
-        <div class="form-group">
             <label for="valor">Valor do quarto</label>
             <input type="number" name="valor" class="form-control" id="valor">
         </div>
 
-        <div class="form-group">
-            <label for="photos">Upload de arquivos</label>
-            <input type="file" name="photos[]" class="form-control" id="photos" multiple>
-        </div>
-
         <button type="submit" class="btn btn-success">Salvar</button>
+        <button type="reset" class="btn btn-info">Limpar</button>
     </form>
 
     <br><br><br>
@@ -61,8 +53,10 @@
                 <td>{{$disp['valor']}}</td>
                 <td>{{$disp['data_inicio']}}</td>
                 <td>{{$disp['data_fim']}}</td>
-                <td><a class="btn btn-success" href="/disponibilidade/add/{{$quarto['id']}}">Adicionar período</a>
-                    <a class="btn btn-info" href="/disponibilidade/view/{{$quarto['id']}}">Visualizar</a></td>
+                <td>
+                    <a class="btn btn-success" href="/disponibilidade/deletar/{{$disp['id']}}">Deletar</a>
+                    <a class="btn btn-success" href="/disponibilidade/editar/{{$quarto['id']}}/{{$disp['id']}}">Editar</a>
+                </td>
             </tr>
         @endforeach
         </tbody>

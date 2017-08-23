@@ -40,4 +40,10 @@ Route::group(['middleware' => 'auth','prefix'=> '/quartos'], function() {
 Route::group(['middleware' => 'auth', 'prefix'=>'/disponibilidade'], function(){
 	Route::get('/', 'DisponibilidadeController@index');
 	Route::get('/add/{id}', 'DisponibilidadeController@criar');
+	Route::get('/deletar/{id}', 'DisponibilidadeController@deletar');
+	Route::get('/editar/{idQuarto}/{idDisponibilidade}', 'DisponibilidadeController@iniciarEditar');
+
+	Route::post('/salvar', 'DisponibilidadeController@salvar');
+	Route::post('/editar', 'DisponibilidadeController@editar');
+
 });

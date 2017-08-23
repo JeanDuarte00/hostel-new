@@ -7,7 +7,7 @@ use App\Quarto;
 
 class Disponibilidade extends Model
 {
-    protected $fillable = ['quarto_id','valor','data_inicio','data_fim'];
+    protected $fillable = ['id','quarto_id','valor','data_inicio','data_fim'];
 
     public function quarto()
     {
