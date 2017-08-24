@@ -11,6 +11,6 @@ class Disponibilidade extends Model
 
     public function quarto()
     {
-        return $this->belongsTo('app\Quarto');
+        return $this->belongsTo('App\Quarto');
     }
 }

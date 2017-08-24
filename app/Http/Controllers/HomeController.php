@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Quarto;
+use App\Reservas;
 use App\Http\Requests\ReservaRequest;
 
 class HomeController extends Controller
@@ -36,6 +37,20 @@ class HomeController extends Controller
     }
 
     public function reservar(ReservaRequest $request) {
-        dd($request);
+        
+        $request['data_inicio'] = $this->getDate($request['data_inicio']);
+        $request['data_fim'] = $this->getDate($request['data_fim']);
+
+        $res = Reservas::create($request->all());
+
+        return $res;
+    }
+
+    private function getDate($data) {
+        $data_inicio = str_replace('/','-',$data);
+        $data_inicio = strtotime($data_inicio);
+        $data_inicio = date('Y-m-d',$data_inicio);
+        
+        return $data_inicio;
     }
 }
