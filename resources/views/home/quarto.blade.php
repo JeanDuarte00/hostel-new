@@ -27,7 +27,19 @@
         </div>
     </div>
 
-    <input type="text" name="daterange" value="" />
-    <input type="text" name="daterange2" value="" />
+    <form action="/home/quartos/salvar" method="post">
+        {{ csrf_field() }}
+        <input type="text" name="daterange" value="" />
+        <input type="text" name="daterange2" value="" />
+        <input type="hidden" name="quarto_id" value="{{$quarto->id}}">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <button class="btn btn-success" type="submit">Reservar</button>
+    <form>
 
 @endsection

@@ -17,6 +17,7 @@ Route::group(['prefix' => '/'], function(){
 
 Route::group(['prefix' => '/home'], function(){
 	Route::get('/quarto/{id}', 'HomeController@mostrar');
+	Route::post('/quarto/salvar', 'HomeController@reservar');
 });
 
 Route::get('storage/photos/{filename}', function ($filename)

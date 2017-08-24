@@ -31,6 +31,6 @@ class HomeController extends Controller
     public function mostrar($id) {
         $quarto = quarto::where('id',$id)->firstOrFail();
         $imagens = $quarto->imagens()->get();
-        return view('home.quarto', compact('imagens'));
+        return view('home.quarto', compact('imagens', 'quarto'));
     }
 }
