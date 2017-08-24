@@ -64,7 +64,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" /> 
     <script type="text/javascript">
         $(function() {
-            $('input[name="daterange"]').daterangepicker({
+            $('input[name="data_inicio"]').daterangepicker({
                 singleDatePicker: true,
                 showDropdowns: true,
                 autoApply:true,
@@ -106,7 +106,7 @@
                  
             });
 
-            $('input[name="daterange2"]').daterangepicker({
+            $('input[name="data_fim"]').daterangepicker({
                 singleDatePicker: true,
                 showDropdowns: true,
                 autoApply:true,

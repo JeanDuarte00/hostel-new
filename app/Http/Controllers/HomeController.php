@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Quarto;
+use App\Http\Requests\ReservaRequest;
 
 class HomeController extends Controller
 {
@@ -32,5 +33,9 @@ class HomeController extends Controller
         $quarto = quarto::where('id',$id)->firstOrFail();
         $imagens = $quarto->imagens()->get();
         return view('home.quarto', compact('imagens', 'quarto'));
+    }
+
+    public function reservar(ReservaRequest $request) {
+        dd($request);
     }
 }

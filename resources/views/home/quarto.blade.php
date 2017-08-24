@@ -27,10 +27,10 @@
         </div>
     </div>
 
-    <form action="/home/quartos/salvar" method="post">
+    <form action="/home/quarto/salvar" method="post">
         {{ csrf_field() }}
-        <input type="text" name="daterange" value="" />
-        <input type="text" name="daterange2" value="" />
+        <input type="text" name="data_inicio" value="" />
+        <input type="text" name="data_fim" value="" />
         <input type="hidden" name="quarto_id" value="{{$quarto->id}}">
 
         <br>
