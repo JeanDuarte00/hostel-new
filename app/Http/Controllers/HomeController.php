@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Quarto;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        
     }
 
     /**
@@ -23,6 +24,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $quartos = quarto::all();
+        return view('home.index', compact('quartos'));
+    }
+
+    public function mostrar($id) {
+        $quarto = quarto::where('id',$id)->firstOrFail();
+        $imagens = $quarto->imagens()->get();
+        return view('home.quarto', compact('imagens'));
     }
 }

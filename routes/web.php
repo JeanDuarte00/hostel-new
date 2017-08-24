@@ -11,8 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => '/'], function(){
+	Route::get('/', 'HomeController@index');
+});
+
+Route::group(['prefix' => '/home'], function(){
+	Route::get('/quarto/{id}', 'HomeController@mostrar');
+});
+
+Route::get('storage/photos/{filename}', function ($filename)
+{
+    $path = storage_path('app/photos/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
 });
 
 Auth::routes();

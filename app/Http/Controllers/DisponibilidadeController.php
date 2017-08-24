@@ -45,7 +45,7 @@ class DisponibilidadeController extends Controller
     {
         $disp = Disponibilidade::create($request->all());
 
-        return $this->index();
+        return $this->criar($request['quarto_id']);
     }
 
     /**
