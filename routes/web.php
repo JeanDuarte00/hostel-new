@@ -20,6 +20,11 @@ Route::group(['prefix' => '/home'], function(){
 	Route::post('/quarto/salvar', 'HomeController@reservar');
 });
 
+Route::get('/admin', 'AdminController@index');
+Route::get('/admin/login', function () {
+    return view('admin.login');
+});
+
 Route::get('storage/photos/{filename}', function ($filename)
 {
     $path = storage_path('app/photos/' . $filename);
@@ -40,6 +45,7 @@ Route::get('storage/photos/{filename}', function ($filename)
 Auth::routes();
 
 Route::get('/home', 'QuartosController@index')->name('home');
+
 
 
 Route::group(['middleware' => 'auth','prefix'=> '/quartos'], function() {
