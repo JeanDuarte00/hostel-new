@@ -60,12 +60,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-<<<<<<< HEAD
-    <script src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-=======
+
     <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" /> 
     <script type="text/javascript">
@@ -155,7 +150,6 @@
             });
         });
     </script>
->>>>>>> 28b18a4747809f28ee5abb3b8523ca99ee537708
 </script>
 </body>
 </html>
