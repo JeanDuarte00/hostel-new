@@ -118,12 +118,6 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="valor" class="col-md-4 control-label">Valor</label>
-              <div class="col-md-6">
-                <input id="valor" type="text" class="form-control maskMoeda" name="valor" required>
-              </div>
-            </div>
-            <div class="form-group">
               <div class="col-md-6 col-md-offset-4">
                 <button type="submit" class="btn btn-success">Registrar</button>
               </div>
