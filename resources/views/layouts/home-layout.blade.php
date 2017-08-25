@@ -11,8 +11,8 @@
     <title>{{ config('app.name', 'Hostel') }}</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> 
 </head>
 <body>
@@ -60,102 +60,11 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-<<<<<<< HEAD
-    <script src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-    <script src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-=======
-    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" /> 
-    <script type="text/javascript">
-        $(function() {
-            $('input[name="data_inicio"]').daterangepicker({
-                singleDatePicker: true,
-                showDropdowns: true,
-                autoApply:true,
-                locale: {
-                    "format": "DD/MM/YYYY",
-                    "separator": " - ",
-                    "applyLabel": "Aplicar",
-                    "cancelLabel": "Cancelar",
-                    "fromLabel": "De",
-                    "toLabel": "Até",
-                    "customRangeLabel": "Custom",
-                    "weekLabel": "S",
-                    "daysOfWeek": [
-                        "DOM",
-                        "SEG",
-                        "TER",
-                        "QUA",
-                        "QUI",
-                        "SEX",
-                        "SAB"
-                    ],
-                    "monthNames": [
-                        "Janeiro",
-                        "Fevereiro",
-                        "Março",
-                        "Abril",
-                        "Maio",
-                        "Junho",
-                        "Julho",
-                        "Agosto",
-                        "Setembro",
-                        "Outubro",
-                        "Novembro",
-                        "Dezembro"
-                    ],
-                    "firstDay": 1
-                },
-                 startDate: new Date(),
-                 
-            });
-
-            $('input[name="data_fim"]').daterangepicker({
-                singleDatePicker: true,
-                showDropdowns: true,
-                autoApply:true,
-                locale: {
-                    "format": "DD/MM/YYYY",
-                    "separator": " - ",
-                    "applyLabel": "Aplicar",
-                    "cancelLabel": "Cancelar",
-                    "fromLabel": "De",
-                    "toLabel": "Até",
-                    "customRangeLabel": "Custom",
-                    "weekLabel": "S",
-                    "daysOfWeek": [
-                        "DOM",
-                        "SEG",
-                        "TER",
-                        "QUA",
-                        "QUI",
-                        "SEX",
-                        "SAB"
-                    ],
-                    "monthNames": [
-                        "Janeiro",
-                        "Fevereiro",
-                        "Março",
-                        "Abril",
-                        "Maio",
-                        "Junho",
-                        "Julho",
-                        "Agosto",
-                        "Setembro",
-                        "Outubro",
-                        "Novembro",
-                        "Dezembro"
-                    ],
-                    "firstDay": 1
-                },
-                 
-                 endDate: new Date()
-            });
-        });
-    </script>
->>>>>>> 28b18a4747809f28ee5abb3b8523ca99ee537708
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <script src="../../../public/js/controlsConfig.js"></script>
 </script>
 </body>
 </html>
