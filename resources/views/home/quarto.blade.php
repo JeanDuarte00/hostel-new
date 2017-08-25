@@ -27,10 +27,27 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <input type="text" name="daterange" class="form-control daterange" value="" />
     <i class="fa fa-calendar"></i>
 
     <input type="text" name="daterange2" class="form-control daterange" value="" />
     <i class="fa fa-calendar"></i>
+=======
+    <form action="/home/quarto/salvar" method="post">
+        {{ csrf_field() }}
+        <input type="text" name="data_inicio" value="" />
+        <input type="text" name="data_fim" value="" />
+        <input type="hidden" name="quarto_id" value="{{$quarto->id}}">
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <button class="btn btn-success" type="submit">Reservar</button>
+    <form>
+>>>>>>> 28b18a4747809f28ee5abb3b8523ca99ee537708
 
 @endsection
