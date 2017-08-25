@@ -13,7 +13,7 @@ class CreateDisponobilidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('disponobilidades', function (Blueprint $table) {
+        Schema::create('disponibilidades', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('quarto_id')->unsigned();
             $table->foreign('quarto_id')

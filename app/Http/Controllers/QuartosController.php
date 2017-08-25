@@ -31,6 +31,6 @@ class QuartosController extends Controller
             ]);
         }
         
-        return redirect('/home');	
+        return redirect('/quartos');	
     }
 }

@@ -31,6 +31,7 @@ Route::get('storage/photos/{filename}', function ($filename)
 {
     $path = storage_path('app/photos/' . $filename);
 
+
     if (!File::exists($path)) {
         abort(404);
     }
@@ -38,6 +39,7 @@ Route::get('storage/photos/{filename}', function ($filename)
     $file = File::get($path);
     $type = File::mimeType($path);
 
+	
     $response = Response::make($file, 200);
     $response->header("Content-Type", $type);
 

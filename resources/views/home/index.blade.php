@@ -14,23 +14,6 @@
   </section>
 
   <div class="album text-muted">
-
-    <h3>Alguns quarto</h3>
-    <div class="container">
-      @foreach($quartos as $quarto)
-        <a href="/home/quarto/{{$quarto->id}}">
-          <div class="row">
-            <div class="card">
-
-              <img src="http://localhost:8000/storage/{{$quarto->imagens()->first()->imagem}}"
-                   alt="100%x280" style="height: 280px; width: 100%; display: block;"
-                   data-holder-rendered="true">
-              <p class="card-text">{{$quarto->nome}}</p>
-            </div>
-          </div>
-        </a>
-      @endforeach
-    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-4">
@@ -94,43 +77,16 @@
         </div>
         <div class="col-md-8">
           <div class="row">
-            <div class="col-xs-6">
+          @foreach($quartos as $quarto)
+          <div class="col-xs-6">
               <a href="#" class="thumbnail">
-                <img class="thumbnail-img"
-                     src="https://images.homify.com/c_fill,f_auto,q_auto:eco,w_440/v1483730042/p/photo/image/1762001/QUARTO_CASAL_post.jpg"
-                     alt="Quarto1">
+                <img src="{{ env('APP_URL') }}/storage/{{$quarto->imagens()->first()->imagem}}" 
+                     class="thumbnail-img"
+                     alt="teste" data-holder-rendered="true">
               </a>
             </div>
-            <div class="col-xs-6">
-              <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="https://images.homify.com/images/a_0,c_limit,f_auto,h_1024,q_auto,w_1024/v1492117456/p/photo/image/1955046/_DSC0787/fotos-de-quartos-moderno-por-andrea-buratto-arquitetura-decoracao.jpg" alt="Quarto2">
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="https://images.homify.com/c_fill,f_auto,q_auto:eco,w_440/v1438811379/p/photo/image/379393/DSC_7705.jpg" alt="Quarto3">
-              </a>
-            </div>
-            <div class="col-xs-6">
-              <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="https://abrilcasaclaudia.files.wordpress.com/2017/05/quarto-projetado-pelos-arquitetos-ana-paula-barros-e-maycon-flamarion-e-pelo-designer-thiago-soares-para-a-casa-cor-campinas-2012.jpg?quality=95&strip=info&w=917" alt="Quarto4">
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="http://s2.glbimg.com/MkP8ShXGQWux_dGxSRL3cvKXbE4=/smart/e.glbimg.com/og/ed/f/original/2015/03/11/mostra_quartos_e_etc_29.jpg" alt="Quarto5">
-              </a>
-            </div>
-            <div class="col-xs-6">
-              <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="http://s2.glbimg.com/MkP8ShXGQWux_dGxSRL3cvKXbE4=/smart/e.glbimg.com/og/ed/f/original/2015/03/11/mostra_quartos_e_etc_29.jpg" alt="Quarto6">
-              </a>
-            </div>
-          </div>
+          @endforeach
+         </div>
         </div>
       </div>
     </div>
