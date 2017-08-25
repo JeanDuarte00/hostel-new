@@ -16,6 +16,8 @@
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
+  <link rel="stylesheet" type="text/css"
+        href="{{ asset('css/thumbnail-img.css') }}"/>
   
 </head>
 <body>
@@ -83,6 +85,7 @@
 </div>
 
 <!-- Scripts -->
+<script src="{{ asset('/js/app.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -90,7 +93,7 @@
 <script src="{{ asset('js/controlsConfig.js') }}"></script>
 <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
 <script src="{{ asset('js/jquery.mask.usage.js') }}"></script>
-<script src="{{ asset('/js/app.js') }}"></script>
+
 
 <script>
   window.Laravel = <?php echo json_encode([

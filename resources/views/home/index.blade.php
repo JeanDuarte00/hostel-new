@@ -50,45 +50,44 @@
                     <input type="text" id="dataEntrada" class="form-control maskData daterange">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i>
                   </div>
-                  <div>
-                    <div>
-                      <div class="form-group">
-                        <label for="dataSaida">Data de Saída</label>
-                        <div class="input-group date">
-                          <input type="text" id="dataSaida"
-                                 class="form-control maskData daterange">
-                          <span class="input-group-addon"><i class="fa fa-calendar"></i>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="quarto">Quartos</label>
-                        <select class="form-control" id="quarto">
-                          <option>Quarto 1</option>
-                          <option>Quarto 2</option>
-                          <option>Quarto 3</option>
-                          <option>Quarto 4</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="adultos">Adultos</label>
-                        <select class="form-control" id="adultos">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
-                        <label for="criancas">Crianças</label>
-                        <select class="form-control" id="criancas">
-                          <option>Sem Crianças</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
-                      </div>
-                      <button type="button" class="btn btn-primary">Reservar</button>
+                </div>
+                <div class="form-group">
+                  <label for="dataSaida">Data de Saída</label>
+                  <div class="input-group date">
+                    <input type="text" id="dataSaida"
+                           class="form-control maskData daterange">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="quarto">Quartos</label>
+                  <select class="form-control" id="quarto">
+                    <option>Quarto 1</option>
+                    <option>Quarto 2</option>
+                    <option>Quarto 3</option>
+                    <option>Quarto 4</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="adultos">Adultos</label>
+                  <select class="form-control" id="adultos">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="criancas">Crianças</label>
+                  <select class="form-control" id="criancas">
+                    <option>Sem Crianças</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </div>
+                <button type="button" class="btn btn-primary">Reservar</button>
               </form>
             </div>
           </div>
@@ -104,31 +103,31 @@
             </div>
             <div class="col-xs-6">
               <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="assets/img/Quarto2.jpg" alt="Quarto2">
+                <img class="thumbnail-img" src="https://images.homify.com/images/a_0,c_limit,f_auto,h_1024,q_auto,w_1024/v1492117456/p/photo/image/1955046/_DSC0787/fotos-de-quartos-moderno-por-andrea-buratto-arquitetura-decoracao.jpg" alt="Quarto2">
               </a>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-6">
               <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="assets/img/Quarto3.jpg" alt="Quarto3">
+                <img class="thumbnail-img" src="https://images.homify.com/c_fill,f_auto,q_auto:eco,w_440/v1438811379/p/photo/image/379393/DSC_7705.jpg" alt="Quarto3">
               </a>
             </div>
             <div class="col-xs-6">
               <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="assets/img/Quarto4.jpg" alt="Quarto4">
+                <img class="thumbnail-img" src="https://abrilcasaclaudia.files.wordpress.com/2017/05/quarto-projetado-pelos-arquitetos-ana-paula-barros-e-maycon-flamarion-e-pelo-designer-thiago-soares-para-a-casa-cor-campinas-2012.jpg?quality=95&strip=info&w=917" alt="Quarto4">
               </a>
             </div>
           </div>
           <div class="row">
             <div class="col-xs-6">
               <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="assets/img/Quarto5.jpg" alt="Quarto5">
+                <img class="thumbnail-img" src="http://s2.glbimg.com/MkP8ShXGQWux_dGxSRL3cvKXbE4=/smart/e.glbimg.com/og/ed/f/original/2015/03/11/mostra_quartos_e_etc_29.jpg" alt="Quarto5">
               </a>
             </div>
             <div class="col-xs-6">
               <a href="#" class="thumbnail">
-                <img class="thumbnail-img" src="assets/img/Quarto6.jpg" alt="Quarto6">
+                <img class="thumbnail-img" src="http://s2.glbimg.com/MkP8ShXGQWux_dGxSRL3cvKXbE4=/smart/e.glbimg.com/og/ed/f/original/2015/03/11/mostra_quartos_e_etc_29.jpg" alt="Quarto6">
               </a>
             </div>
           </div>
