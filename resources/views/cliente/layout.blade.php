@@ -17,8 +17,8 @@
   <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css"/>
   <link rel="stylesheet" type="text/css"
-        href="{{ asset('css/thumbnail-img.css') }}"/>
-  
+        href="{{ asset('css/main.css') }}"/>
+
 </head>
 <body>
 <div id="app">
@@ -80,8 +80,9 @@
       </div>
     </div>
   </nav>
-
-  @yield('content')
+  <div class="container">
+    @yield('content')
+  </div>
 </div>
 
 <!-- Scripts -->
