@@ -27,7 +27,10 @@
         </div>
     </div>
 
-    <input type="text" name="daterange" value="" />
-    <input type="text" name="daterange2" value="" />
+    <input type="text" name="daterange" class="form-control daterange" value="" />
+    <i class="fa fa-calendar"></i>
+
+    <input type="text" name="daterange2" class="form-control daterange" value="" />
+    <i class="fa fa-calendar"></i>
 
 @endsection
