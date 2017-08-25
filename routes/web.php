@@ -15,15 +15,17 @@ Route::group(['prefix' => '/'], function(){
 	Route::get('/', 'HomeController@index');
 });
 
-Route::group(['prefix' => '/home'], function(){
+Route::group(['middleware' => 'cliente', 'prefix' => '/home'], function(){
 	Route::get('/quarto/{id}', 'HomeController@mostrar');
 	Route::post('/quarto/salvar', 'HomeController@reservar');
 });
 
-Route::get('/admin', 'AdminController@index');
-Route::get('/admin/login', function () {
-    return view('admin.login');
-});
+Route::get('cliente/registrar', 'ClienteController@mostrarRegistroFrom');
+Route::post('cliente/registrar', 'ClienteController@registrar');
+
+Route::get('cliente/login', 'LoginController@mostrarLoginForm');
+Route::post('cliente/login', 'LoginController@login');
+Route::post('cliente/logout', 'LoginController@logout');
 
 Route::get('storage/photos/{filename}', function ($filename)
 {
@@ -43,10 +45,6 @@ Route::get('storage/photos/{filename}', function ($filename)
 });
 
 Auth::routes();
-
-Route::get('/home', 'QuartosController@index')->name('home');
-
-
 
 Route::group(['middleware' => 'auth','prefix'=> '/quartos'], function() {
 	Route::get('/', 'QuartosController@index');

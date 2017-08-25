@@ -45,9 +45,9 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
-        'admin' => [
+        'cliente' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'cliente',
         ]
     ],
 
@@ -73,9 +73,9 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-        'admins' => [
+        'cliente' => [
             'driver' => 'eloquent',
-            'model' => App\Admin::class,
+            'model' => App\Cliente::class,
         ],
 
         // 'users' => [
@@ -105,8 +105,8 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'admins' => [
-            'provider' => 'admins',
+        'cliente' => [
+            'provider' => 'cliente',
             'table' => 'password_resets',
             'expire' => 15,
         ],
