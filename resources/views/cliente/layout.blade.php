@@ -83,7 +83,6 @@
 </div>
 
 <!-- Scripts -->
-<script src="/js/app.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -91,6 +90,7 @@
 <script src="{{ asset('js/controlsConfig.js') }}"></script>
 <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
 <script src="{{ asset('js/jquery.mask.usage.js') }}"></script>
+<script src="{{ asset('/js/app.js') }}"></script>
 
 <script>
   window.Laravel = <?php echo json_encode([
