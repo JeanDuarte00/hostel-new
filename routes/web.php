@@ -75,3 +75,5 @@ Route::group(['middleware' => 'auth', 'prefix'=>'/disponibilidade'], function(){
 	Route::post('/editar', 'DisponibilidadeController@editar');
 
 });
+
+Route::get('/pagamento' , 'PagamentoController@index');

@@ -19,6 +19,9 @@
   <link rel="stylesheet" type="text/css"
         href="{{ asset('css/main.css') }}"/>
 
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>      
+
 </head>
 <body>
 <div id="app">
@@ -87,13 +90,13 @@
 
 <!-- Scripts -->
 <script src="{{ asset('/js/app.js') }}"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 <script src="{{ asset('js/controlsConfig.js') }}"></script>
 <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
 <script src="{{ asset('js/jquery.mask.usage.js') }}"></script>
+<script src="{{ asset('js/payment.js') }}"></script>
 
 
 <script>
