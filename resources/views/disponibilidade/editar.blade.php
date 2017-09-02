@@ -12,7 +12,7 @@
         </ul>
     @endif
 
-    <form action="/disponibilidade/editar" method="post">
+    <form action="/dashboard/disponibilidade/editar" method="post">
         {{ csrf_field() }}
         <input type="hidden" value="{{$quarto['id']}}" name="quarto_id"/>
         <input type="hidden" value="{{$disp['id']}}" name="id"/>

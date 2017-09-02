@@ -17,7 +17,7 @@ class DisponibilidadeController extends Controller
      */
     public function index()
     {
-        $quartos = quarto::all();
+        $quartos = quarto::where('ativo',1)->get();
         return view('disponibilidade.index', compact('quartos'));
     }
 

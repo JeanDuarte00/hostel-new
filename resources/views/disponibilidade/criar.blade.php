@@ -12,7 +12,7 @@
         </ul>
     @endif
 
-    <form action="/disponibilidade/salvar" method="post">
+    <form action="/dashboard/disponibilidade/salvar" method="post">
         {{ csrf_field() }}
         <input type="hidden" value="{{$quarto['id']}}" name="quarto_id"/>
         <div class="form-group">
@@ -54,8 +54,8 @@
                 <td>{{$disp['data_inicio']}}</td>
                 <td>{{$disp['data_fim']}}</td>
                 <td>
-                    <a class="btn btn-success" href="/disponibilidade/deletar/{{$disp['id']}}">Deletar</a>
-                    <a class="btn btn-success" href="/disponibilidade/editar/{{$quarto['id']}}/{{$disp['id']}}">Editar</a>
+                    <a class="btn btn-success" href="/dashboard/disponibilidade/deletar/{{$disp['id']}}">Deletar</a>
+                    <a class="btn btn-success" href="/dashboard/disponibilidade/editar/{{$quarto['id']}}/{{$disp['id']}}">Editar</a>
                 </td>
             </tr>
         @endforeach

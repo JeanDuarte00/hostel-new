@@ -22,7 +22,7 @@
                 <td>{{$quarto['nome']}}</td>
                 <td>{{$quarto['valor']}}</td>
                 <td>{{$quarto['descricao_simples']}}</td>
-                <td><a class="btn btn-success" href="/disponibilidade/add/{{$quarto['id']}}">Visualizar</a></td>
+                <td><a class="btn btn-success" href="/dashboard/disponibilidade/add/{{$quarto['id']}}">Visualizar</a></td>
             </tr>
         @endforeach
         </tbody>

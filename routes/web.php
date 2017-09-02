@@ -61,8 +61,6 @@ Route::group(['middleware' => 'auth','prefix'=> '/dashboard/quartos'], function(
 
 	Route::get('editar/{id}', 'QuartosController@iniciarEditar')->where('id', '[0-9]+');
 
-	Route::post('update', 'QuartosController@update');
-
 });
 
 Route::group(['middleware' => 'auth', 'prefix'=>'/dashboard/disponibilidade'], function(){
