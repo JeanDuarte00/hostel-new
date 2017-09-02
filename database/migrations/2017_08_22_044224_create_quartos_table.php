@@ -19,6 +19,9 @@ class CreateQuartosTable extends Migration
             $table->decimal('valor', 5, 2);
             $table->string('descricao_simples');
             $table->string('descricao_completa');
+            $table->integer('qtd_adultos')->nullable();
+            $table->integer('qtd_criancas')->nullable();
+            $table->integer('ativo')->default(1);
             $table->timestamps();
         });
     }

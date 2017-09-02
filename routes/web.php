@@ -48,7 +48,7 @@ Route::get('storage/photos/{filename}', function ($filename)
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth','prefix'=> '/quartos'], function() {
+Route::group(['middleware' => 'auth','prefix'=> '/dashboard/quartos'], function() {
 	Route::get('/', 'QuartosController@index');
 
 	Route::get('mostra/{id}', 'QuartosController@show')->where('id','[0-9]+');
@@ -57,15 +57,15 @@ Route::group(['middleware' => 'auth','prefix'=> '/quartos'], function() {
 
 	Route::post('salvar', 'QuartosController@salvar');
 
-	Route::get('delete/{id}', 'QuartosController@delete')->where('id', '[0-9]+');
+	Route::get('deletar/{id}', 'QuartosController@deletar')->where('id', '[0-9]+');
 
-	Route::get('update/{id}', 'QuartosController@prepareUpdate')->where('id', '[0-9]+');
+	Route::get('editar/{id}', 'QuartosController@iniciarEditar')->where('id', '[0-9]+');
 
 	Route::post('update', 'QuartosController@update');
 
 });
 
-Route::group(['middleware' => 'auth', 'prefix'=>'/disponibilidade'], function(){
+Route::group(['middleware' => 'auth', 'prefix'=>'/dashboard/disponibilidade'], function(){
 	Route::get('/', 'DisponibilidadeController@index');
 	Route::get('/add/{id}', 'DisponibilidadeController@criar');
 	Route::get('/deletar/{id}', 'DisponibilidadeController@deletar');

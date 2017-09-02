@@ -8,11 +8,17 @@ class Quarto extends Model
 {
     protected $table = 'quartos';
 
-    protected $fillable = ['nome', 'valor','descricao_simples','descricao_completa'];
+    protected $fillable = ['id','nome', 'valor','descricao_simples','descricao_completa','qtd_criancas', 'qtd_adultos'];
+    
 
     public function imagens()
     {
         return $this->hasMany('App\imagem_quarto');
+    }
+
+    public function reservas()
+    {
+        return $this->hasMany('App\Reservas');
     }
 
 
