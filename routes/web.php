@@ -13,9 +13,10 @@
 
 Route::group(['prefix' => '/'], function(){
 	Route::get('/', 'HomeController@index');
+	Route::post('pesquisar', 'HomeController@pesquisa');
 });
 
-Route::group(['middleware' => 'cliente', 'prefix' => '/home'], function(){
+Route::group(['prefix' => '/home'], function(){
 	Route::get('/quarto/{id}', 'HomeController@mostrar');
 	Route::post('/quarto/salvar', 'HomeController@reservar');
 });

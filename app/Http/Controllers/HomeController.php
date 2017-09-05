@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Quarto;
 use App\Reservas;
 use App\Http\Requests\ReservaRequest;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -26,22 +27,40 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $quartos = quarto::all();
+        $quartos = quarto::where('ativo',1)->get();
         return view('home.index', compact('quartos'));
     }
 
+    public function pesquisa()
+    {
+        
+    }
+
     public function mostrar($id) {
+        
         $quarto = quarto::where('id',$id)->firstOrFail();
         $imagens = $quarto->imagens()->get();
         return view('home.quarto', compact('imagens', 'quarto'));
     }
 
-    public function reservar(ReservaRequest $request) {
+    public function reservar(ReservaRequest $request) 
+    {
         
-        $request['data_inicio'] = $this->getDate($request['data_inicio']);
-        $request['data_fim'] = $this->getDate($request['data_fim']);
-
-        $res = Reservas::create($request->all());
+        $request->data_inicio = $this->getDate($request->data_inicio);
+        $request->data_fim = $this->getDate($request->data_fim);
+        
+        $result = DB::select("select q.* from quartos q, reservas r where q.id = r.quarto_id and r.data_inicio >= ? and r.data_fim <= ? and q.id = ?; ", [$request->data_inicio, $request->data_fim, $request->quarto_id]);
+        if(count($result) > 0) 
+        {
+            return $this->mostrar($request->quarto_id);
+        }
+        
+        $reserva['data_inicio'] = $this->getDate($request->data_inicio);
+        $reserva['data_fim'] = $this->getDate($request->data_fim);
+        $reserva['quarto_id'] = $request->quarto_id;
+        $reserva['valor'] = $request->valor;
+        
+        $res = Reservas::create($reserva);
 
         return $res;
     }

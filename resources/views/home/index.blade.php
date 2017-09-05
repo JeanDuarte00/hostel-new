@@ -22,15 +22,12 @@
               <i class="fa fa-search"></i>&nbsp; <strong>Pesquisar</strong>
             </div>
             <div class="panel-body">
-              <form>
-                <div class="form-group">
-                  <label for="hotel">Destino/Acomodação</label>
-                  <input type="text" id="hotel" class="form-control">
-                </div>
+              <form action="/pesquisar" method="post">
+                {{ csrf_field() }}
                 <div class="form-group">
                   <label for="dataEntrada">Data de Entrada</label>
                   <div class="input-group date">
-                    <input type="text" id="dataEntrada" class="form-control maskData daterange">
+                    <input type="text" id="data_inicio" name="data_inicio" class="form-control maskData daterange">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i>
                   </div>
                 </div>
@@ -38,22 +35,13 @@
                   <label for="dataSaida">Data de Saída</label>
                   <div class="input-group date">
                     <input type="text" id="dataSaida"
-                           class="form-control maskData daterange">
+                           class="form-control maskData daterange" name="data_saida">
                     <span class="input-group-addon"><i class="fa fa-calendar"></i>
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="quarto">Quartos</label>
-                  <select class="form-control" id="quarto">
-                    <option>Quarto 1</option>
-                    <option>Quarto 2</option>
-                    <option>Quarto 3</option>
-                    <option>Quarto 4</option>
-                  </select>
-                </div>
-                <div class="form-group">
                   <label for="adultos">Adultos</label>
-                  <select class="form-control" id="adultos">
+                  <select class="form-control" id="adultos" name="qtd_adultos">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -61,16 +49,16 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="criancas">Crianças</label>
-                  <select class="form-control" id="criancas">
-                    <option>Sem Crianças</option>
+                  <label for="adultos">Crianças</label>
+                  <select class="form-control" id="adultos" name="qtd_criancas">
+                    <option>0</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                   </select>
                 </div>
-                <button type="button" class="btn btn-primary">Reservar</button>
+                <button type="submit" class="btn btn-primary">Reservar</button>
               </form>
             </div>
           </div>
@@ -79,7 +67,7 @@
           <div class="row">
           @foreach($quartos as $quarto)
           <div class="col-xs-6">
-              <a href="#" class="thumbnail">
+              <a href="/home/quarto/{{$quarto->id}}" class="thumbnail">
                 <img src="{{ env('APP_URL') }}/storage/{{$quarto->imagens()->first()->imagem}}" 
                      class="thumbnail-img"
                      alt="teste" data-holder-rendered="true">

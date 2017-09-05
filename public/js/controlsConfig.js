@@ -1,5 +1,6 @@
 $('.daterange').daterangepicker({
   "autoApply": true,
+  "singleDatePicker": true,
   "locale": {
     "format": "DD/MM/YYYY",
     "separator": " - ",
