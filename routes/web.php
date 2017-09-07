@@ -11,14 +11,14 @@
 |
 */
 
-Route::group(['prefix' => '/'], function(){
-	Route::get('/', 'HomeController@index');
-	Route::post('pesquisar', 'HomeController@pesquisa');
+Route::group(['prefix' => '/'], function () {
+  Route::get('/', 'HomeController@index');
+  Route::post('pesquisar', 'HomeController@pesquisa');
 });
 
-Route::group(['prefix' => '/home'], function(){
-	Route::get('/quarto/{id}', 'HomeController@mostrar');
-	Route::post('/quarto/salvar', 'HomeController@reservar');
+Route::group(['prefix' => '/home'], function () {
+  Route::get('/quarto/{id}', 'HomeController@mostrar');
+  Route::post('/quarto/salvar', 'HomeController@reservar');
 });
 
 Route::get('cliente/registrar', 'ClienteController@mostrarRegistroFrom');
@@ -28,51 +28,54 @@ Route::get('cliente/login', 'LoginController@mostrarLoginForm');
 Route::post('cliente/login', 'LoginController@login');
 Route::post('cliente/logout', 'LoginController@logout');
 
-Route::get('storage/photos/{filename}', function ($filename)
-{
-    $path = storage_path('app/photos/' . $filename);
+Route::get('storage/photos/{filename}', function ($filename) {
+  $path = storage_path('app/photos/' . $filename);
 
 
-    if (!File::exists($path)) {
-        abort(404);
-    }
+  if (!File::exists($path)) {
+    abort(404);
+  }
 
-    $file = File::get($path);
-    $type = File::mimeType($path);
+  $file = File::get($path);
+  $type = File::mimeType($path);
 
-	
-    $response = Response::make($file, 200);
-    $response->header("Content-Type", $type);
 
-    return $response;
+  $response = Response::make($file, 200);
+  $response->header("Content-Type", $type);
+
+  return $response;
 });
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth','prefix'=> '/dashboard/quartos'], function() {
-	Route::get('/', 'QuartosController@index');
+Route::get('/dashboard', function(){
+  return view('dashboard.index');
+});
 
-	Route::get('mostra/{id}', 'QuartosController@show')->where('id','[0-9]+');
+Route::group(['middleware' => 'auth', 'prefix' => '/dashboard/quartos'], function () {
+  Route::get('/', 'QuartosController@index');
 
-	Route::get('salvar', 'QuartosController@iniciarSalvar');	
+  Route::get('mostra/{id}', 'QuartosController@show')->where('id', '[0-9]+');
 
-	Route::post('salvar', 'QuartosController@salvar');
+  Route::get('salvar', 'QuartosController@iniciarSalvar');
 
-	Route::get('deletar/{id}', 'QuartosController@deletar')->where('id', '[0-9]+');
+  Route::post('salvar', 'QuartosController@salvar');
 
-	Route::get('editar/{id}', 'QuartosController@iniciarEditar')->where('id', '[0-9]+');
+  Route::get('deletar/{id}', 'QuartosController@deletar')->where('id', '[0-9]+');
+
+  Route::get('editar/{id}', 'QuartosController@iniciarEditar')->where('id', '[0-9]+');
 
 });
 
-Route::group(['middleware' => 'auth', 'prefix'=>'/dashboard/disponibilidade'], function(){
-	Route::get('/', 'DisponibilidadeController@index');
-	Route::get('/add/{id}', 'DisponibilidadeController@criar');
-	Route::get('/deletar/{id}', 'DisponibilidadeController@deletar');
-	Route::get('/editar/{idQuarto}/{idDisponibilidade}', 'DisponibilidadeController@iniciarEditar');
+Route::group(['middleware' => 'auth', 'prefix' => '/dashboard/disponibilidade'], function () {
+  Route::get('/', 'DisponibilidadeController@index');
+  Route::get('/add/{id}', 'DisponibilidadeController@criar');
+  Route::get('/deletar/{id}', 'DisponibilidadeController@deletar');
+  Route::get('/editar/{idQuarto}/{idDisponibilidade}', 'DisponibilidadeController@iniciarEditar');
 
-	Route::post('/salvar', 'DisponibilidadeController@salvar');
-	Route::post('/editar', 'DisponibilidadeController@editar');
+  Route::post('/salvar', 'DisponibilidadeController@salvar');
+  Route::post('/editar', 'DisponibilidadeController@editar');
 
 });
 
-Route::get('/pagamento' , 'PagamentoController@index');
+Route::get('/pagamento', 'PagamentoController@index');
