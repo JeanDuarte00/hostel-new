@@ -63,6 +63,8 @@
             </li>
             
           </ul>
+
+          <p class="navbar-text navbar-right"><a href="<?php echo BASEURL ?>login/logout.php" class="navbar-link">Sair</a></p>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>

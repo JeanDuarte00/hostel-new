@@ -27,7 +27,7 @@ function login()
 
         if($result)
         {
-            $_SESSION['hasLogin'] = true;
+            loginAdmin();
             header('location:'. BASEURL . 'admin/index.php');
         }
         else
@@ -37,4 +37,10 @@ function login()
         }
         
     }
+}
+
+function logoutAdmin()
+{
+    loginAdmin();
+    isLogged();
 }
