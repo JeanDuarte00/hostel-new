@@ -69,6 +69,33 @@ function find( $table = null, $id = null )
     return $found;
 }
 
+function find_with_sql($sql)
+{
+    $database = open_database();
+
+    $found = null;
+    try
+    {
+        
+        $result = $database->query($sql);
+
+        if($result->num_rows > 0)
+        {
+            $found = $result->fetch_all(MYSQLI_ASSOC);
+        }
+    }
+    catch(Exception $e)
+    {
+        $_SESSION['message'] = $e->getMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+
+    return $found;
+
+}
+
 function find_all( $table )
 {
     return find($table);

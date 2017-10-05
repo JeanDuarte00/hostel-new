@@ -13,7 +13,7 @@ if ( !defined('ABSPATH') )
     define('ABSPATH', dirname(__FILE__). '/');
 
 if ( !defined('BASEURL') )
-    define('BASEURL', '/hostel/');
+    define('BASEURL', '/hostel-new/');
     
 if( !defined('DBAPI') )
     define('DBAPI', ABSPATH . 'inc/database.php');    
@@ -22,6 +22,7 @@ if( !defined('DBAPI') )
 
 /** Inicio teamplate */
 define('HEADER_TEMPLATE', ABSPATH . 'inc/header.php');
+define('HEADERNONAV_TEMPLATE', ABSPATH . 'inc/header-nonav.php');
 define('FOOTER_TEMPLATE', ABSPATH . 'inc/footer.php');    
 
 /** Fim Teamplate */
@@ -30,3 +31,6 @@ define('FOOTER_TEMPLATE', ABSPATH . 'inc/footer.php');
 if( !defined('UPLOAD') )
     define('UPLOAD', ABSPATH . 'upload/');
 /** Fim file upload */
+
+if( !defined('SECURITY') )
+    define('SECURITY', ABSPATH . 'inc/security.php');
