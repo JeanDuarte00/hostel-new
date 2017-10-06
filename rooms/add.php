@@ -30,6 +30,13 @@
       <input type="number" class="form-control" name="room['value']">
     </div>
   </div>
+
+  <div class="row">
+    <div class="form-group col-md-2">
+      <label for="campo4">Quantidade</label>
+      <input type="number" class="form-control" name="romm['qtd']">
+    </div>
+  </div>
   
   <div id="actions" class="row">
     <div class="col-md-12">
