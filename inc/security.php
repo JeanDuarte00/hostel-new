@@ -2,26 +2,36 @@
 
 function isLogged()
 {
-    session_start();
+    
+    start_session();
     
     if(!isset($_SESSION['hasAdmin']) || $_SESSION['hasAdmin'] == false) 
     {
+        
         header('location:'. BASEURL. 'login/index.php');
     }
+
 }
 
 function loginAdmin()
 {
-    session_start();
-    $_SESSION['hasAdmin'] = true;
+    start_session();
+    $_SESSION['hasAdmin'] = TRUE;
 }
 
 function logout()
 {
-    session_start();
+    start_session();
 
     if(isset($_SESSION['hasAdmin']))
     {
-        $_SESSION['hasAdmin'] = false;
+        unset($_SESSION["hasAdmin"]);
+    }
+}
+
+function start_session()
+{
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
     }
 }

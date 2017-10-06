@@ -48,7 +48,7 @@ function add()
 	if(empty($error)){
 		echo "Success";
 	}
-    header('location: add.php');
+    header('location: index.php');
 }
 
 

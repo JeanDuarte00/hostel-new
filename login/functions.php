@@ -13,18 +13,18 @@ function index()
 
 function login()
 {
-    if(isset($_POST['user']))
+    if(isset($_POST['email']))
     {   
-
-        session_start();
-        $login = $_POST['user'];
-        $password = $login['\'password\''];
+        
+        $password = $_POST['password'];
         $password = sha1(md5($password));
+        $email = $_POST['email'];
         
-        $sql = "SELECT * FROM users WHERE email = '".$login['\'email\''] . "' and password = '". $password . "';";
-        
+        $sql = "SELECT * FROM users WHERE email = '".$email . "' and password = '". $password . "';";
+
         $result = find_with_sql($sql);
 
+        
         if($result)
         {
             loginAdmin();
@@ -41,6 +41,6 @@ function login()
 
 function logoutAdmin()
 {
-    loginAdmin();
+    logout();
     isLogged();
 }

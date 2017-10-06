@@ -5,7 +5,7 @@
 
 <?php include(HEADER_TEMPLATE); ?>
 
-<h2>Novo Cliente</h2>
+<h2>Nova(s) foto(s)</h2>
 
 <form action="add.php" method="post" enctype="multipart/form-data">
   <!-- area de campos do form -->

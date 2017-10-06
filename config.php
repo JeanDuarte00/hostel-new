@@ -22,7 +22,7 @@ if( !defined('DBAPI') )
 
 /** Inicio teamplate */
 define('HEADER_TEMPLATE', ABSPATH . 'inc/header.php');
-define('HEADERNONAV_TEMPLATE', ABSPATH . 'inc/header-nonav.php');
+define('HEADERNONAV_TEMPLATE', ABSPATH . 'inc/header-user.php');
 define('FOOTER_TEMPLATE', ABSPATH . 'inc/footer.php');    
 
 /** Fim Teamplate */
