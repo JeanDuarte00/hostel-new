@@ -5,11 +5,15 @@ require_once(DBAPI);
 
 $image = null;
 $images = null;
+$rooms = null;
+$room = null;
 
 function index()
 {
-    global $images;
-    $images = find_all('images');
+    global $rooms;
+    $sql = "SELECT ri.*, r.name FROM room_image ri LEFT JOIN rooms r ON ri.room_id = r.id GROUP BY ri.room_id;";
+    $rooms = find_with_sql($sql);
+    
 }
 
 function add()
@@ -41,6 +45,17 @@ function add()
             $image['url'] = $file_name;
             $image['created_at'] = $image['updated_at'] = $now->format("Y-m-d H:i:s");
             save('images', $image); 
+            
+            $sql = "SELECT id FROM images ORDER BY ID DESC LIMIT 1";
+
+            $lastId = find_with_sql($sql);
+            $img = $_POST['room'];
+
+            foreach ($lastId as $key => $value) {
+                $img['image_id'] = $value['id'];
+            }
+            
+            save('room_image', $img);
         }else{
                 print_r($errors);
         }
@@ -51,5 +66,18 @@ function add()
     header('location: index.php');
 }
 
+global $rooms;
+$rooms = find_all('rooms');
 
+}
+
+function remove()
+{
+    if(isset($_GET['room_id']))
+    {
+        $sql = "DELETE FROM room_image WHERE room_id = ". $_GET['room_id'];
+        delete_with_sql($sql);
+    }
+
+    header('location: index.php');
 }

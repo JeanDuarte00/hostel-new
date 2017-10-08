@@ -134,6 +134,7 @@ function save( $table = null, $customer = null)
 
     
     close_database($database);
+    
 }
 
 function update($table = null, $id = 0, $data = null)
@@ -175,6 +176,26 @@ function delete($table = null, $id = 0)
     $database = open_database();
 
     $sql = "DELETE FROM " . $table . " WHERE id = " . $id;
+    die($sql);
+    try
+    {
+        $database->query($sql);
+
+        $_SESSION['message'] = "Registro excluído com sucesso";
+        $_SESSION['type'] = "success";
+    }
+    catch(Exception $e)
+    {
+        $_SESSION['message'] = $e->getMessage();
+        $_SESSION['type'] = 'danger';
+    }
+
+    close_database($database);
+}
+
+function delete_with_sql($sql = null)
+{
+    $database = open_database();
 
     try
     {

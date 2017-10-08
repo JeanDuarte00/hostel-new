@@ -10,6 +10,19 @@
 <form action="add.php" method="post" enctype="multipart/form-data">
   <!-- area de campos do form -->
   <hr />
+
+   <div class="row">
+    <div class="form-group col-md-7">
+      <label for="name">Selecione o quarto: </label>
+      <select name="room['room_id']">
+      <option value="">Selecione</option>
+      <?php foreach($rooms as $r) : ?>
+        <option value="<?php echo $r['id'] ?>"><?php echo $r['name'] ?></option>
+      <?php endforeach ?>
+      </select>
+    </div>
+  </div>
+
   <div class="row">
     <div class="form-group col-md-7">
       <label for="name">Imagens</label>
