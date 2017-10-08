@@ -49,7 +49,9 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="<?php echo BASEURL; ?>rooms">Gerenciar Quartos</a></li>
+                    <li><a href="<?php echo BASEURL; ?>rooms/customer/index.php">Gerênciar Valores</a></li>
                     <li><a href="<?php echo BASEURL; ?>rooms/add.php">Novo Quarto</a></li>
+
                 </ul>
             </li>
             <li class="dropdown">

@@ -1,6 +1,6 @@
 <?php
-    require_once('functions.php');
-    index();
+  require_once "functions.php";  
+  index();
 ?>
 
 <?php include(HEADER_TEMPLATE); ?>
@@ -11,8 +11,8 @@
 			<h2>Quartos</h2>
 		</div>
 		<div class="col-sm-6 text-right h2">
-	    	<a class="btn btn-primary" href="add.php"><i class="fa fa-plus"></i> Novo Quarto</a>
-	    	<a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i> Atualizar</a>
+	    	<a class="btn btn-primary" href="add.php"><i class="fa fa-plus"></i> Novo Valor</a>
+	    	<a class="btn btn-default" href="index.php"><i class="fa fa-refresh"></i>Atualizar</a>
 	    </div>
 	</div>
 </header>
@@ -33,8 +33,9 @@
 	<tr>
 		<th class="text-center">ID</th>
 		<th class="text-center">Nome</th>
-		<th class="text-center" width="30%">Descrição</th>
-		<th class="text-center">Atualizado em</th>
+		<th class="text-center">Valor</th>
+		<th class="text-center">Data Inicio</th>
+		<th class="text-center">Data Fim</th>
 		<th class="text-center">Opções</th>
 	</tr>
 </thead>
@@ -44,16 +45,9 @@
 	<tr>
 		<td class="text-center"><?php echo $room['id']; ?></td>
 		<td class="text-center"><?php echo $room['name']; ?></td>
-		
-		<td class="text-center">
-			<?php if(strlen($room['description']) < 50) : ?>
-				<?php echo $room['description']; ?>
-			<?php else : ?>
-				<?php echo substr($room['description'], 0,50) . "..."; ?>
-			<?php endif; ?>
-		</td>
-
-		<td class="text-center"><?php echo $room['updated_at']; ?></td>
+		<td class="text-center"><?php echo $room['value']; ?></td>
+		<td class="text-center"><?php echo $room['date_start']; ?></td>
+		<td class="text-center"><?php echo $room['date_end']; ?></td>
 		<td class="actions text-center">
 			<a href="view.php?id=<?php echo $room['id']; ?>" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> Visualizar</a>
 			<a href="edit.php?id=<?php echo $room['id']; ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Editar</a>

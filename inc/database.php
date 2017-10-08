@@ -118,7 +118,6 @@ function save( $table = null, $customer = null)
     $values = rtrim($values, ',');
 
     $sql = "INSERT INTO ". $table . "($columns)" . " VALUES " . "($values);";
-
     
     try
     {
